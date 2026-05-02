@@ -1,0 +1,664 @@
+/* ===== Editorial Theme for CV / About / Portfolio / Contact ===== */
+
+.cv-theme {
+    --cv-bg: #F5F5F4;
+    --cv-bg-alt: #EFEDE8;
+    --cv-surface: #F8F7F3;
+
+    --cv-text: #111111;
+    --cv-muted: rgba(17, 17, 17, 0.66);
+
+    --cv-accent: #7C2D12;
+    --cv-gold: #C2A878;
+    --cv-border: rgba(17, 17, 17, 0.10);
+
+    background-color: var(--cv-bg);
+    color: var(--cv-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+/* ===== Header ===== */
+
+.cv-theme .site-header {
+    padding-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(245, 245, 244, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+    z-index: 100;
+}
+
+.cv-theme .site-header nav ul {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.03);
+}
+
+.cv-theme .site-header nav a {
+    color: var(--cv-text);
+    font-size: 1rem;
+}
+
+.cv-theme .site-header nav a:hover,
+.cv-theme .site-header nav a.active {
+    background: rgba(194, 168, 120, 0.14);
+    color: var(--cv-text);
+}
+
+/* ===== Shared Link / Button Style ===== */
+
+.cv-theme .btn,
+.download-btn,
+.about-page-link {
+    display: inline-block;
+    padding: 0.9rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--cv-accent);
+    color: var(--cv-accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.cv-theme .btn:hover,
+.download-btn:hover,
+.about-page-link:hover {
+    color: var(--cv-text);
+    border-bottom-color: var(--cv-text);
+    transform: translateY(-1px);
+}
+
+.download-btn::after,
+.about-page-link::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 1.1rem;
+    color: var(--cv-gold);
+    transition: transform 0.25s ease;
+}
+
+.download-btn:hover::after,
+.about-page-link:hover::after {
+    transform: translateX(3px);
+}
+
+/* ===== Optional CV Hero ===== */
+
+.cv-theme .cv-hero {
+    min-height: 36vh;
+    border-radius: 0;
+    margin-bottom: 0;
+    background: linear-gradient(
+        180deg,
+        #f5f5f4 0%,
+        #f5f5f4 68%,
+        #efede8 100%
+    );
+    display: flex;
+    align-items: end;
+}
+
+.cv-theme .cv-hero .hero-inner {
+    max-width: 1080px;
+    text-align: left;
+    padding: 7rem 2rem 3rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cv-theme .cv-hero .subtitle {
+    color: var(--cv-accent);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* ===== Main CV Container ===== */
+
+.cv-container {
+    background-color: transparent;
+    color: var(--cv-text);
+    padding: 4rem 2rem 2rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.cv-header {
+    text-align: left;
+    padding: 1rem 0 2.5rem 0;
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.cv-header h1 {
+    font-size: 4.6rem;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    color: var(--cv-text);
+    margin-bottom: 0.85rem;
+    text-align: left;
+}
+
+.cv-header .subtitle {
+    font-size: 1rem;
+    color: var(--cv-accent);
+    margin-bottom: 1.25rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.contact-info {
+    color: var(--cv-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ===== CV Sections ===== */
+
+.cv-section {
+    margin-bottom: 3.5rem;
+}
+
+.cv-section h2 {
+    color: var(--cv-text);
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.cv-section h2::after {
+    content: "";
+    display: block;
+    width: 68px;
+    height: 1px;
+    margin-top: 1rem;
+    background: var(--cv-gold);
+}
+
+.cv-item {
+    margin-bottom: 2.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.cv-item h3 {
+    color: var(--cv-text);
+    font-size: 1.22rem;
+    line-height: 1.45;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.cv-item .institution {
+    font-weight: 600;
+    color: var(--cv-accent);
+    margin-bottom: 0.35rem;
+    font-style: italic;
+}
+
+.cv-item .date {
+    color: var(--cv-muted);
+    font-style: normal;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.cv-item .description {
+    color: var(--cv-muted);
+    line-height: 1.85;
+    font-size: 1rem;
+}
+
+.cv-item ul.description {
+    margin-left: 1.2rem;
+    margin-top: 0.7rem;
+}
+
+.cv-item ul.description li {
+    margin-bottom: 0.6rem;
+    line-height: 1.75;
+}
+
+/* ===== Skills ===== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
+    padding-top: 1rem;
+}
+
+.skill-category h3 {
+    color: var(--cv-accent);
+    margin-bottom: 0.9rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category ul li {
+    padding: 0.55rem 0;
+    color: var(--cv-muted);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+    line-height: 1.65;
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+/* ===== Contact Page ===== */
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.contact-item {
+    padding: 1.5rem 0 0 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 0;
+}
+
+.contact-item h3 {
+    color: var(--cv-text);
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.contact-item p {
+    margin: 0.5rem 0;
+    color: var(--cv-muted);
+    line-height: 1.7;
+}
+
+.contact-item a {
+    color: var(--cv-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: var(--cv-text);
+}
+
+.contact-form {
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--cv-text);
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(17, 17, 17, 0.10);
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--cv-text);
+    background: rgba(255, 255, 255, 0.45);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cv-accent);
+    box-shadow: 0 0 0 3px rgba(124, 45, 18, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== Portfolio ===== */
+
+.portfolio-item {
+    margin-bottom: 3rem;
+    padding: 1rem 0 2rem 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.portfolio-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.portfolio-item h3 {
+    color: var(--cv-text);
+    font-size: 1.35rem;
+    margin-bottom: 0.4rem;
+}
+
+.portfolio-item .institution {
+    font-weight: 600;
+    color: var(--cv-accent);
+    margin-bottom: 0.35rem;
+    font-style: italic;
+}
+
+.portfolio-item .date {
+    color: var(--cv-muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.portfolio-description {
+    color: var(--cv-muted);
+    line-height: 1.85;
+}
+
+.portfolio-description p {
+    margin-bottom: 1rem;
+}
+
+.portfolio-description ul {
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-description li {
+    margin-bottom: 0.6rem;
+    line-height: 1.75;
+}
+
+/* ===== About Page ===== */
+
+.about-page-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    flex: 1;
+}
+
+.about-editorial-hero {
+    min-height: 42vh;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(
+        180deg,
+        #f5f5f4 0%,
+        #f5f5f4 70%,
+        #efede8 100%
+    );
+}
+
+.about-editorial-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 5rem 2rem 2.5rem;
+}
+
+.about-kicker {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cv-accent);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-editorial-inner h1 {
+    font-size: 4.8rem;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    color: var(--cv-text);
+    max-width: 980px;
+}
+
+.about-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 4rem;
+    align-items: start;
+    padding: 4rem 2rem 5rem;
+}
+
+.about-page-image {
+    min-width: 0;
+}
+
+.about-page-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.about-page-text {
+    max-width: 620px;
+}
+
+.about-page-text h1 {
+    font-size: 3rem;
+    color: var(--cv-text);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+.about-lead {
+    font-size: 1.18rem;
+    line-height: 1.85;
+    color: var(--cv-text);
+    margin-bottom: 1.6rem;
+}
+
+.about-page-text p {
+    font-size: 1.02rem;
+    line-height: 1.95;
+    color: var(--cv-muted);
+    margin-bottom: 1.2rem;
+}
+
+/* ===== Portfolio Gallery ===== */
+
+.portfolio-showcase {
+    text-align: left;
+    margin-top: 4rem;
+}
+
+body.cv-theme main#projects {
+    background-color: transparent;
+}
+
+.cv-section .portfolio-title {
+    font-size: 2.2rem;
+    color: var(--cv-text);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.03em;
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    transition: transform 0.28s ease, border-color 0.28s ease;
+    aspect-ratio: 4 / 3;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--cv-gold);
+}
+
+/* ===== Footer ===== */
+
+.cv-theme footer {
+    background-color: #111111;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* ===== Print ===== */
+
+@media print {
+    header,
+    footer,
+    .download-btn {
+        display: none;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .portfolio-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-editorial-inner h1 {
+        font-size: 3.8rem;
+    }
+
+    .about-page-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .cv-header h1 {
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cv-theme {
+        padding-top: 64px;
+    }
+
+    .cv-theme .cv-hero {
+        min-height: 34vh;
+    }
+
+    .cv-theme .cv-hero .hero-inner {
+        padding: 6rem 1.25rem 2.2rem;
+    }
+
+    .cv-container {
+        padding: 2.2rem 1.25rem 1.5rem;
+    }
+
+    .cv-header h1 {
+        font-size: 2.7rem;
+    }
+
+    .cv-section h2 {
+        font-size: 2.1rem;
+    }
+
+    .skills-grid,
+    .contact-methods,
+    .portfolio-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .about-editorial-hero {
+        min-height: 34vh;
+    }
+
+    .about-editorial-inner {
+        padding: 4.5rem 1.25rem 2rem;
+    }
+
+    .about-editorial-inner h1 {
+        font-size: 2.8rem;
+        line-height: 1.02;
+    }
+
+    .about-page-content {
+        padding: 2.5rem 1.25rem 4rem;
+        gap: 2rem;
+    }
+
+    .about-page-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-lead {
+        font-size: 1.05rem;
+    }
+}
